@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xilaew.judo.data/src" modelPluginID="org.xilaew.judo.data"
+    modelName="Model" rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
+    featureMapWrapperInternalInterface="" reflectiveDelegation="true" booleanFlagsField=""
+    importerID="org.eclipse.emf.importer.cdo" featureDelegation="Reflective" complianceLevel="7.0"
+    copyrightFields="false" language="" operationReflection="true" importOrganizing="true">
+  <foreignModel>model.ecore</foreignModel>
+  <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
+  <genPackages prefix="Model" basePackage="org.xilaew.judo.cdo" disposableProviderFactory="true"
+      ecorePackage="model.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="model.ecore#//Sex">
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//Sex/male"/>
+      <genEnumLiterals ecoreEnumLiteral="model.ecore#//Sex/female"/>
+    </genEnums>
+    <genClasses ecoreClass="model.ecore#//Participant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/gender"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/yearOfBirth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Participant/weight"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Tournament">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Tournament/participants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Tournament/groups"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Tournament/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Fight">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Fight/firstCombatant"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Fight/secondCombatant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Fight/scoreFirst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Fight/scoreSecond"/>
+      <genOperations ecoreOperation="model.ecore#//Fight/getWinner"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//List"/>
+    <genClasses ecoreClass="model.ecore#//Pool"/>
+    <genClasses ecoreClass="model.ecore#//Group">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference model.ecore#//Group/combatants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference model.ecore#//Group/fights"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute model.ecore#//Group/name"/>
+    </genClasses>
+    <genClasses ecoreClass="model.ecore#//Pool4"/>
+    <genClasses ecoreClass="model.ecore#//Pool5"/>
+    <genClasses ecoreClass="model.ecore#//List16"/>
+    <genClasses ecoreClass="model.ecore#//List8"/>
+    <genClasses ecoreClass="model.ecore#//List32"/>
+  </genPackages>
+</genmodel:GenModel>

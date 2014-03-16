@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_eJu6wKu8EeOQ0ozqBlSuBQ" name="model">
+  <packagedElement xmi:type="uml:Activity" xmi:id="_eKfvwKu8EeOQ0ozqBlSuBQ" name="views" node="_BF90IKu9EeOQ0ozqBlSuBQ">
+    <node xmi:type="uml:OpaqueAction" xmi:id="_BF90IKu9EeOQ0ozqBlSuBQ" name="In Fight"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_XMXqkKu9EeOQ0ozqBlSuBQ" name="FightAttendant"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_jjq-cKu9EeOQ0ozqBlSuBQ" name="Visitor"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_nwpVMKu9EeOQ0ozqBlSuBQ" name="Manager"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_ux4jUKu9EeOQ0ozqBlSuBQ" name="Record Weight"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_zqJ50Ku9EeOQ0ozqBlSuBQ" name="Execute Fights"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_lPET0Ku-EeOQ0ozqBlSuBQ" name="recordWeight" memberEnd="_lPET0au-EeOQ0ozqBlSuBQ _lPET1Ku-EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_lPET0au-EeOQ0ozqBlSuBQ" name="fightattendant" type="_XMXqkKu9EeOQ0ozqBlSuBQ" association="_lPET0Ku-EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lPET0qu-EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lPET06u-EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_lPET1Ku-EeOQ0ozqBlSuBQ" name="record weight" type="_ux4jUKu9EeOQ0ozqBlSuBQ" association="_lPET0Ku-EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lPET1au-EeOQ0ozqBlSuBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lPET1qu-EeOQ0ozqBlSuBQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_EFJ3MKu_EeOQ0ozqBlSuBQ" name="execute figths" memberEnd="_EFJ3Mau_EeOQ0ozqBlSuBQ _EFJ3NKu_EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_EFJ3Mau_EeOQ0ozqBlSuBQ" name="fightattendant" type="_XMXqkKu9EeOQ0ozqBlSuBQ" association="_EFJ3MKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EFJ3Mqu_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EFJ3M6u_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_EFJ3NKu_EeOQ0ozqBlSuBQ" name="execute fights" type="_zqJ50Ku9EeOQ0ozqBlSuBQ" association="_EFJ3MKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EFJ3Nau_EeOQ0ozqBlSuBQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EFJ3Nqu_EeOQ0ozqBlSuBQ" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_KCy6UKu_EeOQ0ozqBlSuBQ" name="Inform"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_OtxbsKu_EeOQ0ozqBlSuBQ" name="inform" memberEnd="_Otxbsau_EeOQ0ozqBlSuBQ _OtxbtKu_EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Otxbsau_EeOQ0ozqBlSuBQ" name="visitor" type="_jjq-cKu9EeOQ0ozqBlSuBQ" association="_OtxbsKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Otxbsqu_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Otxbs6u_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_OtxbtKu_EeOQ0ozqBlSuBQ" name="inform" type="_KCy6UKu_EeOQ0ozqBlSuBQ" association="_OtxbsKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Otxbtau_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Otxbtqu_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Q8WMEKu_EeOQ0ozqBlSuBQ" name="Print Certificates"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_TzOSkKu_EeOQ0ozqBlSuBQ" name="Register Participants"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XvqS8Ku_EeOQ0ozqBlSuBQ" name="A_visitor_register participants" memberEnd="_XvqS8au_EeOQ0ozqBlSuBQ _XvqS9Ku_EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XvqS8au_EeOQ0ozqBlSuBQ" name="visitor" type="_jjq-cKu9EeOQ0ozqBlSuBQ" association="_XvqS8Ku_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XvqS8qu_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XvqS86u_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_XvqS9Ku_EeOQ0ozqBlSuBQ" name="register participants" type="_TzOSkKu_EeOQ0ozqBlSuBQ" association="_XvqS8Ku_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XvqS9au_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XvqS9qu_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_fhbmIKu_EeOQ0ozqBlSuBQ" name="Manage Groups"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_muZjIKu_EeOQ0ozqBlSuBQ" name="A_manager_manage groups" memberEnd="_muZjIau_EeOQ0ozqBlSuBQ _muZjJKu_EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_muZjIau_EeOQ0ozqBlSuBQ" name="manager" type="_nwpVMKu9EeOQ0ozqBlSuBQ" association="_muZjIKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_muZjIqu_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_muZjI6u_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_muZjJKu_EeOQ0ozqBlSuBQ" name="manage groups" type="_fhbmIKu_EeOQ0ozqBlSuBQ" association="_muZjIKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_muZjJau_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_muZjJqu_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ndUeoKu_EeOQ0ozqBlSuBQ" name="A_manager_print certificate" memberEnd="_ndUeoau_EeOQ0ozqBlSuBQ _ndUepKu_EeOQ0ozqBlSuBQ">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ndUeoau_EeOQ0ozqBlSuBQ" name="manager" type="_nwpVMKu9EeOQ0ozqBlSuBQ" association="_ndUeoKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ndUeoqu_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ndUeo6u_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_ndUepKu_EeOQ0ozqBlSuBQ" name="print certificate" type="_Q8WMEKu_EeOQ0ozqBlSuBQ" association="_ndUeoKu_EeOQ0ozqBlSuBQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ndUepau_EeOQ0ozqBlSuBQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ndUepqu_EeOQ0ozqBlSuBQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

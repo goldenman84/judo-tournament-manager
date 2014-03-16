@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teilnehmer Anmelden</title>
+<link rel="stylesheet"
+	href="jquery-ui-1.10.4/themes/base/jquery.ui.all.css">
+<script src="jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+<script src="jquery-ui-1.10.4/ui/jquery.ui.core.js"></script>
+<script src="jquery-ui-1.10.4/ui/jquery.ui.widget.js"></script>
+<script src="jquery-ui-1.10.4/ui/jquery.ui.position.js"></script>
+<script src="jquery-ui-1.10.4/ui/jquery.ui.menu.js"></script>
+<script src="jquery-ui-1.10.4/ui/jquery.ui.autocomplete.js"></script>
+
+<link rel="stylesheet" href="jQuery-mobile/jquery.mobile-1.4.2.min.css">
+<script src="jQuery-mobile/jquery.mobile-1.4.2.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+<script>
+	$(function() {
+		var cache = {};
+		$(".fistName-input").autocomplete({
+			minLength : 2,
+			source : function(request, response) {
+				var term = request.term;
+				if (term in cache) {
+					response(cache[term]);
+					return;
+				}
+				$.getJSON("FirstNames", request, function(data, status, xhr) {
+					cache[term] = data;
+					response(data);
+				});
+			}
+		});
+	});
+	$(function() {
+		var lastNamecache = {};
+		$(".lastName-input").autocomplete({
+			source : function(request, response) {
+				var term = request.term;
+				if (term in lastNamecache) {
+					response(lastNamecache[term]);
+					return;
+				}
+				$.getJSON("LastNames", request, function(data, status, xhr) {
+					lastNamecache[term] = data;
+					response(data);
+				});
+			},
+			minLength : 2
+		});
+	});
+	$(function() {
+		var clubscache = {};
+		$(".club-input").autocomplete({
+			source : function(request, response) {
+				var term = request.term;
+				if (term in clubscache) {
+					response(clubscache[term]);
+					return;
+				}
+				$.getJSON("Clubs", request, function(data, status, xhr) {
+					clubscache[term] = data;
+					response(data);
+				});
+			},
+			minLength : 2
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="RegisterParticipants" method="post" data-ajax="false">
+		<div id="verein" class="club">
+			<label for="txt_verein">Verein</label> <input class="club-input"
+				data-clear-btn="true" name="verein" id="txt_verein" value=""
+				type="text">
+		</div>
+
+		<div class="separator"></div>
+		<div class="firstName">
+			<label>Vorname</label> <input data-clear-btn="true"
+				class="fistName-input" name="firstName1" type="text">
+		</div>
+		<div class="lastName">
+			<label>Nachname</label> <input data-clear-btn="true"
+				class="lastName-input" name="lastName1" type="text">
+		</div>
+		<div class="sex">
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Geschlecht</legend>
+				<input name="sex1" id="sex-m1" value="male" checked="checked"
+					type="radio"> <label for="sex-m1">Junge</label> <input
+					name="sex1" id="sex-f1" value="female" type="radio"> <label
+					for="sex-f1">Mädchen</label>
+			</fieldset>
+		</div>
+		<div class="year">
+			<label>Geburtsjahr</label> <input data-clear-btn="true" name="year1"
+				type="text">
+		</div>
+		<div class="separator"></div>
+		<div class="firstName">
+			<label>Vorname</label> <input data-clear-btn="true"
+				class="fistName-input" type="text">
+		</div>
+		<div class="lastName">
+			<label for="txt_lastName2">Nachname</label> <input
+				data-clear-btn="true" class="lastName-input" type="text">
+		</div>
+		<div class="sex">
+			<fieldset data-role="controlgroup" data-type="horizontal">
+				<legend>Geschlecht</legend>
+				<input name="sex2" id="sex-m2" value="male" checked="checked"
+					type="radio"> <label for="sex-m2">Junge</label> <input
+					name="sex2" id="sex-f2" value="female" type="radio"> <label
+					for="sex-f2">Mädchen</label>
+			</fieldset>
+		</div>
+		<div class="year">
+			<label>Geburtsjahr</label> <input data-clear-btn="true" type="text">
+		</div>
+
+		<div class="separator"></div>
+
+		<div class="participant" data-clear-btn="true">
+			<div class="firstName">
+				<label>Vorname</label> <input data-clear-btn="true"
+					class="fistName-input" type="text">
+			</div>
+			<div class="lastName">
+				<label>Nachname</label> <input data-clear-btn="true"
+					class="lastName-input" type="text">
+			</div>
+			<div class="sex">
+				<fieldset data-role="controlgroup" data-type="horizontal">
+					<legend>Geschlecht</legend>
+					<input name="sex3" id="sex-m3" value="male" checked="checked"
+						type="radio"> <label for="sex-m3">Junge</label> <input
+						name="sex3" id="sex-f3" value="female" type="radio"> <label
+						for="sex-f3">Mädchen</label>
+				</fieldset>
+			</div>
+			<div class="year">
+				<label>Geburtsjahr</label> <input data-clear-btn="true" type="text">
+			</div>
+		</div>
+		
+		<div class="separator"></div>
+
+		<input type="button" class="importantButton"
+			value="weiteren Teilnehmer Hinzufügen"> <input
+			class="importantButton" type="submit" value="Anmelden">
+	</form>
+</body>
+</html>

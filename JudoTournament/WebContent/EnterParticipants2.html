@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Teilnehmer Anmelden</title>
+	<script src="jquery-ui-1.10.4/jquery-1.10.2.js"></script>
+	<script src="jquery-ui-1.10.4/ui/jquery.ui.core.js"></script>
+	<script src="jquery-ui-1.10.4/ui/jquery.ui.widget.js"></script>
+	<script src="jquery-ui-1.10.4/ui/jquery.ui.position.js"></script>
+	<script src="jquery-ui-1.10.4/ui/jquery.ui.menu.js"></script>
+	<script src="jquery-ui-1.10.4/ui/jquery.ui.autocomplete.js"></script>
+	<script>
+	$(function() {
+		var firstNamecache = {};
+		$( ".firstName" ).autocomplete({
+			source: function( request, response ) {
+				var term = request.term;
+				if ( term in firstNamecache ) {
+					response( firstNamecache[ term ] );
+					return;
+				}
+				$.getJSON( "FirstNames", request, function( data, status, xhr ) {
+					firstNamecache[ term ] = data;
+					response( data );
+					});
+				},
+			minLength: 2
+/* 			change: function( event, ui ) {
+				if(ui.item.category=="männlich"){
+					document.getElementById('sex-m1').checked=true;
+				}
+				else {
+					document.getElementById('sex-f1').checked=true;
+				};
+			}
+*/		});
+	});
+	$(function() {
+		var lastNamecache = {};
+		$( ".lastName" ).autocomplete({
+			source: function( request, response ) {
+				var term = request.term;
+				if ( term in lastNamecache ) {
+					response( lastNamecache[ term ] );
+					return;
+				}
+				$.getJSON( "LastNames", request, function( data, status, xhr ) {
+					lastNamecache[ term ] = data;
+					response( data );
+					});
+				},
+			minLength: 2
+		});
+	});
+	$(function() {
+		var clubscache = {};
+		$( ".club" ).autocomplete({
+			source: function( request, response ) {
+				var term = request.term;
+				if ( term in clubscache ) {
+					response( clubscache[ term ] );
+					return;
+				}
+				$.getJSON( "Clubs", request, function( data, status, xhr ) {
+					clubscache[ term ] = data;
+					response( data );
+					});
+				},
+			minLength: 2
+		});
+	});
+	</script>
+</head>
+<body>
+<form>
+<div id="verein">
+     <label for="txt_verein">Verein</label>
+     <input class="club" data-clear-btn="true" name="verein" id="txt_verein" value="" type="text">
+</div>
+<span class="participant">
+		<div class="firstName">
+			<label for="txt_firstName1">Vorname</label>
+     		<input data-clear-btn="true" id="txt_firstName1" name="firstName" value="" type="text">
+		</div>		
+		<div class="lastName">
+			<label for="txt_lastName1">Nachname</label>
+     		<input data-clear-btn="true" id="txt_lastName1" value="" type="text">
+		</div>  
+		<div class="sex">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+        	<legend>Geschlecht</legend>
+        	<input name="sex1" id="sex-m1" value="male" checked="checked" type="radio">
+        	<label for="sex-m1">Junge</label>
+        	<input name="sex1" id="sex-f1" value="female" type="radio">
+        	<label for="sex-f1">Mädchen</label>
+    	</fieldset>
+    	</div>
+    	<div class="year">
+			<label for="txt_year1">Geburtsjahr</label>
+     		<input data-clear-btn="true" id="txt_year1" value="" type="text">
+		</div>  
+	</span>
+	<span class="participant">
+		<div class="firstName">
+		<label for="txt_firstName2">Vorname</label>
+     	<input data-clear-btn="true" id="txt_firstName2" type="text">
+		</div>		
+		<div class="lastName">
+		<label for="txt_lastName2">Nachname</label>
+     	<input data-clear-btn="true" id="txt_lastName2" type="text">
+		</div>  
+		<div class="sex">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Geschlecht</legend>
+        <input name="sex2" id="sex-m2" value="male" checked="checked" type="radio">
+        <label for="sex-m2">Junge</label>
+        <input name="sex2" id="sex-f2" value="female" type="radio">
+        <label for="sex-f2">Mädchen</label>
+    	</fieldset>
+    	</div>
+    	<div class="year">
+			<label for="txt_year2">Geburtsjahr</label>
+     		<input data-clear-btn="true" id="txt_year2" type="text">
+		</div> 
+	</span>
+</form>
+</body>
+</html>
